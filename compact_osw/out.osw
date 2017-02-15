@@ -1,0 +1,103 @@
+{
+   "completed_at" : "20170215T054406Z",
+   "completed_status" : "Success",
+   "current_step" : 3,
+   "eplusout_err" : "Program Version,EnergyPlus, Version 8.6.0-198c6a3cff, YMD=2017.02.14 22:44,IDD_Version 8.6.0\n   ** Warning ** Timestep: Requested number (1) is less than the suggested minimum of 4.\n   **   ~~~   ** Please see entry for Timestep in Input/Output Reference for discussion of considerations.\n   ************* Beginning Zone Sizing Calculations\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"ALL WEEKDAYS\", , One or more values are not integer as required by Schedule Type Limits Name=HVAC OPERATION SCHEDULE TYPE LIMITS\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 12:45\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=ALL WEEKDAYS 1\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 06:45\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=ALL WEEKDAYS 2\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 06:15\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=ALL WEEKDAYS 3\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 06:15\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=ALL WEEKDAYS 4\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"ALL WEEKENDS\", , One or more values are not integer as required by Schedule Type Limits Name=HVAC OPERATION SCHEDULE TYPE LIMITS\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"ALL WEEKENDS 7\", , One or more values are not integer as required by Schedule Type Limits Name=HVAC OPERATION SCHEDULE TYPE LIMITS\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"BUILDING HVAC OPERATION DEFAULT WEEKDAY SCHEDULE\", , One or more values are not integer as required by Schedule Type Limits Name=HVAC OPERATION SCHEDULE TYPE LIMITS\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 06:15\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=BUILDING PLUG LOAD DEFAULT WEEKDAY SCHEDULE\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 06:45\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=BUILDING WATER USE DEFAULT WEEKDAY SCHEDULE\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SIMUWATT DEFAULT SUMMER CLG SCH - 68F\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SIMUWATT DEFAULT SUMMER HTG SCH - 68F\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SIMUWATT DEFAULT WINTER CLG SCH - 68F\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SIMUWATT DEFAULT WINTER HTG SCH - 68F\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid \"until\" field value is not a multiple of the minutes for each timestep: 16:15\n   **   ~~~   ** Other errors may result. Occurred in Day Schedule=SPACE OCCUPANCY DEFAULT WEEKDAY SCHEDULE\n   ** Warning ** ProcessScheduleInput: Schedule:Constant=\"ALWAYS OFF DISCRETE\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Constant=\"ALWAYS ON CONTINUOUS\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** GetHTSurfaceData: Surfaces with interface to Ground found but no \"Ground Temperatures\" were input.\n   **   ~~~   ** Found first in surface=ENTRY WAY  FLOOR\n   **   ~~~   ** Defaults, constant throughout the year of (18.0) will be used.\n   ** Warning ** GetSurfaceData: InterZone Surface Tilts do not match as expected.\n   **   ~~~   **   Tilt=0.0 in Surface=LEVEL 0 ENTRY WAY  CEILING PLENUM DROPPEDCEILING, Zone=LEVEL 0 CEILING PLENUM ZONE\n   **   ~~~   **   Tilt=0.0 in Surface=ENTRY WAY  DROPPEDCEILING, Zone=SINGLE ZONE\n   ** Warning ** GetSurfaceData: InterZone Surface Classes do not match as expected.\n   **   ~~~   ** Surface=\"LEVEL 0 ENTRY WAY  CEILING PLENUM DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Adjacent Surface=\"ENTRY WAY  DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Other errors/warnings may follow about these surfaces.\n   ** Warning ** GetSurfaceData: InterZone Surface Tilts do not match as expected.\n   **   ~~~   **   Tilt=0.0 in Surface=LEVEL 0 OPEN AREA 1 CEILING PLENUM DROPPEDCEILING, Zone=LEVEL 0 CEILING PLENUM ZONE\n   **   ~~~   **   Tilt=0.0 in Surface=OPEN AREA 1 DROPPEDCEILING, Zone=SINGLE ZONE\n   ** Warning ** GetSurfaceData: InterZone Surface Classes do not match as expected.\n   **   ~~~   ** Surface=\"LEVEL 0 OPEN AREA 1 CEILING PLENUM DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Adjacent Surface=\"OPEN AREA 1 DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Other errors/warnings may follow about these surfaces.\n   ** Warning ** GetSurfaceData: InterZone Surface Tilts do not match as expected.\n   **   ~~~   **   Tilt=0.0 in Surface=LEVEL 0 SMALL OFFICE 1 CEILING PLENUM DROPPEDCEILING, Zone=LEVEL 0 CEILING PLENUM ZONE\n   **   ~~~   **   Tilt=0.0 in Surface=SMALL OFFICE 1 DROPPEDCEILING, Zone=SINGLE ZONE\n   ** Warning ** GetSurfaceData: InterZone Surface Classes do not match as expected.\n   **   ~~~   ** Surface=\"LEVEL 0 SMALL OFFICE 1 CEILING PLENUM DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Adjacent Surface=\"SMALL OFFICE 1 DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Other errors/warnings may follow about these surfaces.\n   ** Warning ** GetSurfaceData: InterZone Surface Tilts do not match as expected.\n   **   ~~~   **   Tilt=0.0 in Surface=LEVEL 0 UTILITY 1 CEILING PLENUM DROPPEDCEILING, Zone=LEVEL 0 CEILING PLENUM ZONE\n   **   ~~~   **   Tilt=0.0 in Surface=UTILITY 1 DROPPEDCEILING, Zone=SINGLE ZONE\n   ** Warning ** GetSurfaceData: InterZone Surface Classes do not match as expected.\n   **   ~~~   ** Surface=\"LEVEL 0 UTILITY 1 CEILING PLENUM DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Adjacent Surface=\"UTILITY 1 DROPPEDCEILING\", surface class=Roof\n   **   ~~~   ** Other errors/warnings may follow about these surfaces.\n   ** Warning ** No floor exists in Zone=\"LEVEL 0 CEILING PLENUM ZONE\", zone floor area is zero. All values for this zone that are entered per floor area will be zero.\n   ** Warning ** CheckUsedConstructions: There are 3 nominally unused constructions in input.\n   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;\n   ** Warning ** GetSimpleAirModelInputs: ZoneInfiltration:DesignFlowRate=\"LEVEL 0 CEILING PLENUM ZONE SPACE TYPE 1 LEAKY BLDG INFILTRATION\", Design Flow Rate Calculation Method specifies Flow per Zone Floor Area, but Zone Floor Area = 0.  0 Infiltration will result.\n   ************* Beginning System Sizing Calculations\n   ************* Beginning Plant Sizing Calculations\n   ** Warning ** GetDXCoils: Coil:Cooling:DX:SingleSpeed=\"COIL COOLING DX SINGLE SPEED 1\":\n   **   ~~~   ** ...At least one of the four input parameters for the latent capacity degradation model\n   **   ~~~   ** ...is set to zero. Therefore, the latent degradation model will not be used for this simulation.\n   ** Warning ** Output:Meter: invalid Name=\"DISTRICTCOOLING:FACILITY\" - not found.\n   ** Warning ** Output:Meter: invalid Name=\"DISTRICTHEATING:FACILITY\" - not found.\n   ** Warning ** Output:Meter:MeterFileOnly requested for \"Electricity:Facility\" (TimeStep), already on \"Output:Meter\". Will report to both eplusout.eso and eplusout.mtr\n   ************* Testing Individual Branch Integrity\n   ************* All Branches passed integrity testing\n   ************* Testing Individual Supply Air Path Integrity\n   ************* All Supply Air Paths passed integrity testing\n   ************* Testing Individual Return Air Path Integrity\n   ************* All Return Air Paths passed integrity testing\n   ************* No node connection errors were found.\n   ************* Beginning Simulation\n   ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed \"COIL COOLING DX SINGLE SPEED 1\" - Full load outlet air dry-bulb temperature < 2C. This indicates the possibility of coil frost/freeze. Outlet temperature = 1.58 C.\n   **   ~~~   **  ...Occurrence info = RUN PERIOD 1, 01/24 13:30 - 14:00\n   **   ~~~   ** ... Possible reasons for low outlet air dry-bulb temperatures are: This DX coil\n   **   ~~~   **    1) may have a low inlet air dry-bulb temperature. Inlet air temperature = 19.111 C.\n   **   ~~~   **    2) may have a low air flow rate per watt of cooling capacity. Check inputs.\n   **   ~~~   **    3) is used as part of a HX assisted cooling coil which uses a high sensible effectiveness. Check inputs.\n   ************* Simulation Error Summary *************\n   ************* There are 5 unused schedules in input.\n   ************* There are 5 unused week schedules in input.\n   ************* There are 38 unused day schedules in input.\n   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.\n   *************\n   ************* ===== Recurring Error Summary =====\n   ************* The following recurring error messages occurred.\n   *************\n   *************  ** Warning ** CalcDoe2DXCoil: Coil:Cooling:DX:SingleSpeed=\"COIL COOLING DX SINGLE SPEED 1\" - Full load outlet temperature indicates a possibility of frost/freeze error continues. Outlet air temperature statistics follow:\n   *************  **   ~~~   **   This error occurred 46 total times;\n   *************  **   ~~~   **   during Warmup 0 times;\n   *************  **   ~~~   **   during Sizing 0 times.\n   *************  **   ~~~   **   Max=1.95855  Min=1.298465\n   *************\n   *************\n   ************* ===== Final Error Summary =====\n   ************* The following error categories occurred.  Consider correcting or noting.\n   ************* InterZone Surface Tilts -- mismatch\n   ************* Nominally Unused Constructions\n   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause\n   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm\n   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).\n   *************\n   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.\n   ************* EnergyPlus Sizing Error Summary. During Sizing: 29 Warning; 0 Severe Errors.\n   ************* EnergyPlus Completed Successfully-- 80 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  3.64sec\n",
+   "seed_file" : "seb.osm",
+   "started_at" : "20170215T054348Z",
+   "steps" : [
+      {
+         "arguments" : {},
+         "measure_dir_name" : "IncreaseWallRValue",
+         "result" : {
+            "completed_at" : "20170215T054351Z",
+            "started_at" : "20170215T054351Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The existing insulation for exterior walls was increased by 30.0%. This was applied to 1,362 (ft^2) across 1 exterior wall constructions: EXTERIOR-WALL adj exterior wall insulation (R-16.5).",
+            "step_info" : [
+               "For construction'EXTERIOR-WALL adj exterior wall insulation', material'Wood-Framed - 4 in. Studs - 16 in. OC - R-11 Cavity Insulation_R-value 30.0% increase' was altered."
+            ],
+            "step_initial_condition" : "The building had 1 exterior wall constructions: EXTERIOR-WALL (R-14.0).",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "r_value",
+                  "value" : 30
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {
+            "r_value" : 45
+         },
+         "measure_dir_name" : "IncreaseRoofRValue",
+         "result" : {
+            "completed_at" : "20170215T054351Z",
+            "started_at" : "20170215T054351Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The existing insulation for roofs was increased by 45.0%. This was applied to 885 (ft^2) across 1 roof constructions: EXTERIOR-ROOF adj roof insulation (R-44.2).",
+            "step_info" : [
+               "For construction'EXTERIOR-ROOF adj roof insulation', material'Mineral Fiber Batt Insulation - 10 in._R-value 45.0% increase' was altered."
+            ],
+            "step_initial_condition" : "The building had 1 roof constructions: EXTERIOR-ROOF (R-31.2).",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "r_value",
+                  "value" : 45
+               }
+            ],
+            "step_warnings" : [
+               "Measure couldn't find the construction named 'EXTERIOR-WALL adj exterior wall insulation' in the exterior surface hash."
+            ]
+         }
+      },
+      {
+         "arguments" : {
+            "flowPerZoneFloorArea" : 10.76
+         },
+         "measure_dir_name" : "SetEplusInfiltration",
+         "result" : {
+            "completed_at" : "20170215T054355Z",
+            "started_at" : "20170215T054355Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The building finished with flow per zone floor area values ranging from 10.76 to 10.76.",
+            "step_info" : [
+               "Setting flow per zone floor area of Space Type 1 Leaky Bldg Infiltration to 10.76(m^3/s-m^2) and changing design flow calculation rate method to Flow/Zone. Original design flow calculation method was Flow/ExteriorArea.",
+               "Setting flow per zone floor area of Entry way Leaky Bldg Infiltration 1 to 10.76(m^3/s-m^2) and changing design flow calculation rate method to Flow/Zone. Original design flow calculation method was Flow/Zone.",
+               "Setting flow per zone floor area of Small office Leaky Bldg Infiltration 1 to 10.76(m^3/s-m^2) and changing design flow calculation rate method to Flow/Zone. Original design flow calculation method was Flow/Zone.",
+               "Setting flow per zone floor area of Open area Leaky Bldg Infiltration 1 to 10.76(m^3/s-m^2) and changing design flow calculation rate method to Flow/Zone. Original design flow calculation method was Flow/Zone.",
+               "Setting flow per zone floor area of Utility Leaky Bldg Infiltration 1 to 10.76(m^3/s-m^2) and changing design flow calculation rate method to Flow/Zone. Original design flow calculation method was Flow/Zone."
+            ],
+            "step_initial_condition" : "The building has 5 infiltrationObject objects. None of the infiltrationObjects started as Flow/Area.",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "flowPerZoneFloorArea",
+                  "value" : 10.76
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {
+            "output_format" : "CSV"
+         },
+         "measure_dir_name" : "DencityReports"
+      }
+   ],
+   "updated_at" : "20170215T054406Z",
+   "weather_file" : "srrl_2013_amy.epw"
+}
