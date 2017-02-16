@@ -7,7 +7,7 @@ test2 = File.join(File.dirname(__FILE__), 'test2.rb')
 
 desc "OpenStudio CLI"
 task :cli do
-  command = "#{$OS_EXE} #{test2}"
+  command = "'#{$OS_EXE}' #{test2}"
   #puts command
   system(command)
 end

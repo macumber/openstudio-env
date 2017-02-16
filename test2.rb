@@ -1,5 +1,7 @@
 require 'json'
 
+#puts "hello"
+
 result = {}
 
 result[:path] = ENV['PATH']
@@ -28,3 +30,5 @@ Gem.loaded_specs.each_pair do |name, spec|
 end
 
 puts JSON::pretty_generate(result)
+
+#puts "goodbye"
