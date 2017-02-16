@@ -1,25 +1,30 @@
-puts 'hello'
+require 'json'
 
-puts "GEM_PATH = #{ENV['GEM_PATH']}"
-puts "GEM_HOME = #{ENV['GEM_HOME']}"
+result = {}
+
+result[:path] = ENV['PATH']
+result[:gem_path] = ENV['GEM_PATH']
+result[:gem_home] = ENV['GEM_HOME']
 
 require 'openstudio'
-puts "OpenStudio::openStudioVersion = #{OpenStudio::openStudioVersion}"
+result[:openstudio_version] = OpenStudio::openStudioVersion
+result[:openstudio_module] = OpenStudio::getOpenStudioModule
 
 require 'openstudio-workflow'
-puts "OpenStudio::Workflow::VERSION = #{OpenStudio::Workflow::VERSION}"
+result[:openstudio_workflow_version] = OpenStudio::Workflow::VERSION
 
 require 'openstudio-standards'
-puts "OpenstudioStandards::VERSION = #{OpenstudioStandards::VERSION}"
+result[:openstudio_standards_version] = OpenstudioStandards::VERSION
 
 begin
   require 'parallel'
+  result[:parallel_loaded] = true
 rescue LoadError
-  puts 'parallel failed to load'
+  result[:parallel_loaded] = false
 end
 
 Gem.loaded_specs.each_pair do |name, spec|
-  puts "#{name} loaded from #{spec.spec_dir}"
+  result[name] = spec.spec_dir
 end
 
-puts 'goodbye'
+puts JSON::pretty_generate(result)

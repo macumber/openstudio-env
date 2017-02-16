@@ -8,3 +8,5 @@ gem 'rspec', '~>3.5.0'
 gem 'minitest', '~>4.7'
 gem 'test-unit-minitest', '~>0.9.1'
 gem 'parallel', '~>1.10.0'
+
+gem 'rake'

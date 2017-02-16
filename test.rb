@@ -1,11 +1,10 @@
-#os = 'C:\openstudio-2.0.2\bin\openstudio.exe'
-os = 'E:\openstudio\build\Products\Debug\openstudio.exe'
+require_relative 'where_openstudio'
 
 osw = File.join(File.dirname(__FILE__), 'compact_osw/compact.osw')
 test2 = File.join(File.dirname(__FILE__), 'test2.rb')
 
-#command = "#{os} run -w #{osw}"
-command = "#{os} #{test2}"
+#command = "#{$OS_EXE} run -w #{osw}"
+command = "#{$OS_EXE} #{test2}"
 
-puts command
+#puts command
 system(command)

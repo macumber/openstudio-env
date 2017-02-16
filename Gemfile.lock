@@ -6,6 +6,7 @@ GEM
     openstudio-standards (0.1.11)
     openstudio-workflow (1.1.0)
     parallel (1.10.0)
+    rake (12.0.0)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -30,8 +31,9 @@ DEPENDENCIES
   openstudio-standards (= 0.1.11)
   openstudio-workflow (= 1.1.0)
   parallel (~> 1.10.0)
+  rake
   rspec (~> 3.5.0)
   test-unit-minitest (~> 0.9.1)
 
 BUNDLED WITH
-   1.14.3
+   1.14.4
