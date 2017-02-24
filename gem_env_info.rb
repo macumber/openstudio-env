@@ -69,14 +69,3 @@ Gem.loaded_specs.each_value do |spec|
 end
 
 puts JSON::pretty_generate(result)
-
-# run a simulation
-do_sim = true
-
-if do_sim
-  require_relative 'where_openstudio'
-  osw = File.join(File.dirname(__FILE__), 'compact_osw/compact.osw')
-  command = "\"#{$OS_EXE}\" run -w \"#{osw}\""
-  puts command
-  system(command)
-end
