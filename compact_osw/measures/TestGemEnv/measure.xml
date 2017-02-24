@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>test_gem_env</name>
   <uid>807d3ebf-c89b-4b93-b400-110ca060b2bb</uid>
-  <version_id>7cc50fa8-d0de-4236-9081-5f395ecbeeb7</version_id>
-  <version_modified>20170224T180025Z</version_modified>
+  <version_id>3725c1d9-a603-42b2-8672-81aef3aed8ae</version_id>
+  <version_modified>20170224T180648Z</version_modified>
   <xml_checksum>350B6836</xml_checksum>
   <class_name>TestGemEnv</class_name>
   <display_name>Test Gem Env.</display_name>
@@ -47,7 +47,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>86527252</checksum>
+      <checksum>DE4785A7</checksum>
     </file>
   </files>
 </measure>

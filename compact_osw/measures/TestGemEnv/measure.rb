@@ -30,11 +30,11 @@ class TestGemEnv < OpenStudio::Ruleset::ModelUserScript
       return false
     end
 
-    runner.registerInfo('Loading Gem Info')
+    puts 'Loading Gem Info'
     
     require_relative '../../../gem_env_info.rb'
     
-    runner.registerInfo('Loaded Gem Info')
+    puts 'Loaded Gem Info'
     
     return true
 

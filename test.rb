@@ -4,6 +4,7 @@ require_relative 'gem_env_info'
 do_sim = true
 
 if do_sim
+  require 'open3'
   require_relative 'where_openstudio'
   osw = File.join(File.dirname(__FILE__), 'compact_osw/compact.osw')
   
@@ -17,7 +18,10 @@ if do_sim
   
   command = "\"#{$OS_EXE}\" run -w \"#{osw}\""
   puts command
-  system(command)
+  stdout, stderr, status = Open3.capture3(command)
+  puts stdout
+  puts stderr
+  puts status
   
   # If the test is successful, there are no ruby load errors
   if File.exist?(File.join(File.dirname(__FILE__), 'compact_osw/run/eplusout.sql'))

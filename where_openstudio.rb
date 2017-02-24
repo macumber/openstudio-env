@@ -7,3 +7,5 @@ $OS_RB = 'C:\openstudio-2.0.2\Ruby'
 #$OS_RB = 'E:\openstudio\build\Products\Debug'
 
 $PAT_GEMS = 'C:\openstudio-2.0.2\pat\OpenStudio-server\gems'
+
+$PAT_RUBY = 'C:\openstudio-2.0.2\pat\ruby\bin\ruby.exe'
