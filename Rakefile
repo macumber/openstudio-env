@@ -3,11 +3,11 @@ require_relative 'where_openstudio'
 task :default => 'cli'
 
 osw = File.join(File.dirname(__FILE__), 'compact_osw/compact.osw')
-test2 = File.join(File.dirname(__FILE__), 'test2.rb')
+test_file = File.join(File.dirname(__FILE__), 'gem_env_info.rb')
 
 desc "OpenStudio CLI"
 task :cli do
-  command = "'#{$OS_EXE}' #{test2}"
+  command = "\"#{$OS_EXE}\" #{test_file}"
   #puts command
   system(command)
 end
