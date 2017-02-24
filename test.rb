@@ -9,7 +9,7 @@ if do_sim
   osw = File.join(File.dirname(__FILE__), 'compact_osw/compact.osw')
   
   # Remove old test output
-  ['reports', 'run', 'out.osw', 'run/eplusout.sql'].each do |item|
+  ['reports', 'run', 'out.osw'].each do |item|
     item_path = File.join(File.dirname(__FILE__), 'compact_osw', item)
     if File.exist?(item_path) || Dir.exists?(item_path)
       FileUtils.rm_r(item_path)
