@@ -1,7 +1,7 @@
 require_relative 'gem_env_info'
 
 # run a simulation
-do_sim = true
+do_sim = false
 
 if do_sim
   require 'open3'

@@ -1,7 +1,11 @@
 require 'json'
 require 'rbconfig'
 
-#puts "hello"
+begin
+  require 'include_me'
+rescue LoadError
+  $INCLUDE_ME = nil
+end
 
 result = {}
 
@@ -9,7 +13,7 @@ result[:env] = {}
 ENV.each_key {|k| result[:env][k] = ENV[k]}
 
 result[:rb_config] = RbConfig::CONFIG
-
+result[:include_me] = $INCLUDE_ME
 result[:gem] = {}
 result[:gem][:version] = Gem::VERSION
 result[:gem][:bindir] = Gem.bindir
