@@ -2,20 +2,24 @@ require 'fileutils'
 require 'json'
 require_relative 'where_openstudio'
 
-verbose = ""
-#verbose = "--verbose"
+# DLM: this will do the install 
+#require_relative 'install_test_gems'
 
-# DLM: run install_test_gems to use this stuff
 test_gems = File.expand_path('test_gems', File.dirname(__FILE__))
 test_gems_020 = File.join(test_gems, '0_2_0')
 test_gems_021 = File.join(test_gems, '0_2_1')
 test_gems_031 = File.join(test_gems, '0_3_1')
 test_gems_100 = File.join(test_gems, '1_0_0')
+test_gems_my = File.join(test_gems, 'my')
 test_gems_all = File.join(test_gems, 'all')
 
 include_me = File.expand_path('test_includes', File.dirname(__FILE__))
 include_me_a = File.join(include_me, 'a')
 include_me_b = File.join(include_me, 'b')
+include_me_c = File.join(include_me, 'c')
+
+verbose = ""
+#verbose = "--verbose" # tests won't pass with this on since it does not print JSON
 
 def run_test(command, out_file, expected_include_me = nil, expected_test_version = nil)
   FileUtils.rm(out_file) if File.exists?(out_file)
@@ -47,6 +51,7 @@ def run_test(command, out_file, expected_include_me = nil, expected_test_version
       test_version = nil
       result[:specs_all].each do |spec|
         if spec[:name] == "test"
+          next if test_version && (test_version == expected_test_version)
           test_version = spec[:version]
         end
       end
@@ -65,30 +70,48 @@ end
 
 Dir.glob("out*.json").each {|f| FileUtils.rm(f)}
 
-#system('bundle update')
+system('bundle update')
 
-#system("\"#{$OS_EXE}\" measure -t compact_osw/measures")
+#system("\"#{$OS_EXE}\" #{verbose} measure -t compact_osw/measures")
 
-#run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out1.json')
-#run_test("bundle exec \"#{$OS_EXE}\" #{verbose} test.rb", 'out2.json')
-#run_test("ruby -I '#{$OS_RB}' test.rb", 'out3.json') # DLM: is this a valid test case since it relies on system gems?
-#run_test("bundle exec ruby -I '#{$OS_RB}' test.rb", 'out4.json')
-#run_test("rake -I '#{$OS_RB}'", 'out5.json')
-#run_test("bundle exec rake -I '#{$OS_RB}'", 'out6.json')
+#system("\"#{$OS_EXE}\" #{verbose} gem_list")
 
+#FileUtils.rm_rf(test_gems_my) if File.exists?(test_gems_my)
+#system("\"#{$OS_EXE}\" #{verbose} --gem_home \"#{test_gems_my}\" gem_install test") #DLM: not working
+
+#FileUtils.rm_rf(test_gems_my) if File.exists?(test_gems_my)
+#system("\"#{$OS_EXE}\" #{verbose} --gem_home \"#{test_gems_my}\" gem_install test 0.2.0") #DLM: not working
+
+run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out1.json', nil, nil)
+run_test("bundle exec \"#{$OS_EXE}\" #{verbose} test.rb", 'out2.json', nil, "0.2.1") #DLM: not working
+run_test("bundle exec \"#{$OS_EXE}\" #{verbose} --include \"#{include_me_a}\" test.rb", 'out3.json', "A", "0.2.1") #DLM: not working
+run_test("bundle exec ruby -I '#{$OS_RB}' test.rb", 'out4.json', nil, "0.2.1")
+run_test("rake -I '#{$OS_RB}'", 'out5.json')
+run_test("bundle exec rake -I '#{$OS_RB}'", 'out6.json', nil, "0.2.1")
+
+ENV['RUBYLIB'] = nil
+ENV['GEM_HOME'] = nil
 ENV['GEM_PATH'] = "#{$PAT_GEMS}#{File::PATH_SEPARATOR}#{$PAT_GEMS}#{File::ALT_SEPARATOR}bundler#{File::ALT_SEPARATOR}gems"
 #run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out7.json')
 run_test("\"#{$PAT_RUBY}\" -I '#{$OS_RB}' test.rb", 'out8.json')
 
+ENV['RUBYLIB'] = nil
+ENV['GEM_HOME'] = nil
 ENV['GEM_PATH'] = test_gems_020
-ENV['OPENSTUDIO_GEM_PATH'] = ""
 run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out9.json', nil, "0.2.0")
+run_test("\"#{$OS_EXE}\" #{verbose} --gem_path \"#{test_gems_031}\" test.rb", 'out10.json', nil, "0.3.1")
+run_test("\"#{$OS_EXE}\" #{verbose} --gem_path \"#{test_gems_100}\" --gem_path \"#{test_gems_031}\" test.rb", 'out11.json', nil, "1.0.0")
 
-ENV['GEM_PATH'] = test_gems_020
-ENV['OPENSTUDIO_GEM_PATH'] = test_gems_031
-#run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out10.json')
-run_test("\"#{$OS_EXE}\" #{verbose} --gem_path \"#{test_gems_100}\" test.rb", 'out11.json', nil, "1.0.0")
+ENV['RUBYLIB'] = nil
+ENV['GEM_HOME'] = test_gems_020
+ENV['GEM_PATH'] = nil
+run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out12.json', nil, "0.2.0")
+run_test("\"#{$OS_EXE}\" #{verbose} --gem_home \"#{test_gems_031}\" test.rb", 'out13.json', nil, "0.3.1")
 
+ENV['RUBYLIB'] = nil
+ENV['GEM_HOME'] = nil
 ENV['RUBYLIB'] = include_me_a
-run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out12.json', "A", "1.0.0")
-run_test("\"#{$OS_EXE}\" #{verbose} --include \"#{include_me_b}\" test.rb", 'out13.json', "B", "1.0.0")
+run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out14.json', "A", nil)
+run_test("\"#{$OS_EXE}\" #{verbose} --include \"#{include_me_b}\" test.rb", 'out15.json', "B", nil)
+run_test("\"#{$OS_EXE}\" #{verbose} --include \"#{include_me_c}\" --include \"#{include_me_b}\" test.rb", 'out16.json', "C", nil)
+

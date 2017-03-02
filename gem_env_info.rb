@@ -14,6 +14,8 @@ ENV.each_key {|k| result[:env][k] = ENV[k]}
 
 result[:rb_config] = RbConfig::CONFIG
 result[:include_me] = $INCLUDE_ME
+result[:load_path] = $LOAD_PATH
+
 result[:gem] = {}
 result[:gem][:version] = Gem::VERSION
 result[:gem][:bindir] = Gem.bindir

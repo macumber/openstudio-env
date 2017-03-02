@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ansi (1.5.0)
     diff-lcs (1.3)
     minitest (4.7.5)
     openstudio-standards (0.1.11)
@@ -20,6 +21,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    test (0.2.1)
+      ansi
     test-unit-minitest (0.9.1)
       minitest (~> 4.7)
 
@@ -33,6 +36,7 @@ DEPENDENCIES
   parallel (~> 1.10.0)
   rake
   rspec (~> 3.5.0)
+  test (= 0.2.1)
   test-unit-minitest (~> 0.9.1)
 
 BUNDLED WITH

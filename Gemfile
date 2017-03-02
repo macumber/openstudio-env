@@ -9,4 +9,6 @@ gem 'minitest', '~>4.7'
 gem 'test-unit-minitest', '~>0.9.1'
 gem 'parallel', '~>1.10.0'
 
+gem 'test', '= 0.2.1'
+
 gem 'rake'
