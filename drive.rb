@@ -60,6 +60,12 @@ def run_test(command, out_file, expected_include_me = nil, expected_test_version
         puts "expected_test_version = #{expected_test_version}, test_version = #{test_version}"
         status = "Failed"
       end
+      
+      test_spec_version = result[:test_spec_version]
+      if test_spec_version != expected_test_version
+        puts "expected_test_version = #{expected_test_version}, test_spec_version = #{test_spec_version}"
+        status = "Failed"
+      end
     end
     
   end
@@ -70,7 +76,7 @@ end
 
 Dir.glob("out*.json").each {|f| FileUtils.rm(f)}
 
-system('bundle update')
+#system('bundle update')
 
 #system("\"#{$OS_EXE}\" #{verbose} measure -t compact_osw/measures")
 

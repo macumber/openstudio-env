@@ -1,5 +1,7 @@
 require 'json'
 require 'rbconfig'
+require 'rubygems'
+require 'rubygems/version'
 
 begin
   require 'include_me'
@@ -14,6 +16,17 @@ ENV.each_key {|k| result[:env][k] = ENV[k]}
 
 result[:rb_config] = RbConfig::CONFIG
 result[:include_me] = $INCLUDE_ME
+
+test_spec_version = nil
+begin
+  test_spec = Gem::Specification.find_by_name('test')
+  if test_spec
+    test_spec_version = test_spec.version
+  end
+rescue Exception
+end
+result[:test_spec_version] = test_spec_version
+
 result[:load_path] = $LOAD_PATH
 
 result[:gem] = {}
