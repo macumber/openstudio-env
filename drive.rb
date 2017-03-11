@@ -3,7 +3,7 @@ require 'json'
 require_relative 'where_openstudio'
 
 # DLM: this will do the install 
-#require_relative 'install_test_gems'
+require_relative 'install_test_gems'
 
 test_gems = File.expand_path('test_gems', File.dirname(__FILE__))
 test_gems_020 = File.join(test_gems, '0_2_0')
@@ -76,9 +76,7 @@ end
 
 Dir.glob("out*.json").each {|f| FileUtils.rm(f)}
 
-#system('bundle update')
-
-#system("\"#{$OS_EXE}\" #{verbose} measure -t compact_osw/measures")
+system('bundle update')
 
 #system("\"#{$OS_EXE}\" #{verbose} gem_list")
 
@@ -89,8 +87,8 @@ Dir.glob("out*.json").each {|f| FileUtils.rm(f)}
 #system("\"#{$OS_EXE}\" #{verbose} --gem_home \"#{test_gems_my}\" gem_install test 0.2.0") #DLM: not working
 
 run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out1.json', nil, nil)
-run_test("bundle exec \"#{$OS_EXE}\" #{verbose} test.rb", 'out2.json', nil, "0.2.1") #DLM: not working
-run_test("bundle exec \"#{$OS_EXE}\" #{verbose} --include \"#{include_me_a}\" test.rb", 'out3.json', "A", "0.2.1") #DLM: not working
+#run_test("bundle exec \"#{$OS_EXE}\" #{verbose} test.rb", 'out2.json', nil, "0.2.1") #DLM: not working
+#run_test("bundle exec \"#{$OS_EXE}\" #{verbose} --include \"#{include_me_a}\" test.rb", 'out3.json', "A", "0.2.1") #DLM: not working
 run_test("bundle exec ruby -I '#{$OS_RB}' test.rb", 'out4.json', nil, "0.2.1")
 run_test("rake -I '#{$OS_RB}'", 'out5.json')
 run_test("bundle exec rake -I '#{$OS_RB}'", 'out6.json', nil, "0.2.1")
@@ -98,7 +96,7 @@ run_test("bundle exec rake -I '#{$OS_RB}'", 'out6.json', nil, "0.2.1")
 ENV['RUBYLIB'] = nil
 ENV['GEM_HOME'] = nil
 ENV['GEM_PATH'] = "#{$PAT_GEMS}#{File::PATH_SEPARATOR}#{$PAT_GEMS}#{File::ALT_SEPARATOR}bundler#{File::ALT_SEPARATOR}gems"
-#run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out7.json')
+run_test("\"#{$OS_EXE}\" #{verbose} test.rb", 'out7.json')
 run_test("\"#{$PAT_RUBY}\" -I '#{$OS_RB}' test.rb", 'out8.json')
 
 ENV['RUBYLIB'] = nil

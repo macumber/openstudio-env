@@ -4,7 +4,7 @@ require 'fileutils'
 require_relative 'where_openstudio'
 
 verbose = ""
-verbose = "--verbose" 
+#verbose = "--verbose" 
 
 def run_command(cmd)
   stdout, stderr, status = Open3.capture3(cmd)
