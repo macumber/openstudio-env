@@ -1,0 +1,62 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>energyplus_measure</name>
+  <uid>95f4f603-2994-4c40-962d-0896c7b59a65</uid>
+  <version_id>355731b8-92cc-4459-b06a-f95c8caa9166</version_id>
+  <version_modified>20170310T233856Z</version_modified>
+  <xml_checksum>0B6DEAE1</xml_checksum>
+  <class_name>EnergyPlusMeasure</class_name>
+  <display_name>EnergyPlus Measure</display_name>
+  <description>Replace this text with an explanation of what the measure does in terms that can be understood by a general building professional audience (building owners, architects, engineers, contractors, etc.).  This description will be used to create reports aimed at convincing the owner and/or design team to implement the measure in the actual building design.  For this reason, the description may include details about how the measure would be implemented, along with explanations of qualitative benefits associated with the measure.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.</description>
+  <modeler_description>Replace this text with an explanation for the energy modeler specifically.  It should explain how the measure is modeled, including any requirements about how the baseline model must be set up, major assumptions, citations of references to applicable modeling resources, etc.  The energy modeler should be able to read this description and understand what changes the measure is making to the model and why these changes are being made.  Because the Modeler Description is written for an expert audience, using common abbreviations for brevity is good practice.</modeler_description>
+  <arguments>
+    <argument>
+      <name>zone_name</name>
+      <display_name>New zone name</display_name>
+      <description>This name will be used as the name of the new zone.</description>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Form</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.14.0</identifier>
+        <min_compatible>1.14.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>F975C1B6</checksum>
+    </file>
+    <file>
+      <filename>energyplus_measure_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3B7C81AD</checksum>
+    </file>
+  </files>
+</measure>

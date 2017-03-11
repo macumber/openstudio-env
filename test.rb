@@ -23,7 +23,7 @@ if do_sim
   puts stderr
   puts status
   
-  # If the test is successful, there are no ruby load errors
+  # Check if the test is successful
   if File.exist?(File.join(File.dirname(__FILE__), 'compact_osw/run/eplusout.sql'))
     puts "Run passed"
   else

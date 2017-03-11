@@ -11,6 +11,8 @@ out*.json
 /test/version_tmp/
 /test_gems/
 /tmp/
+/test_models/
+/test_measures/
 
 # Used by dotenv library to load environment variables.
 # .env
