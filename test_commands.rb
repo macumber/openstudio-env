@@ -46,7 +46,7 @@ clean(models, test_models)
 untitled_osm = File.join(test_models, 'untitled.osm')
 
 include_me = File.expand_path('test_includes', File.dirname(__FILE__))
-include_me_a = File.join(include_me, 'a')
+include_me_a = File.join(include_me, 'a/include_me.rb')
 
 compact_osw = File.expand_path('compact_osw/compact.osw', File.dirname(__FILE__))
 
@@ -102,8 +102,8 @@ run_command("\"#{$OS_EXE}\" #{verbose} update --keep \"#{test_models}\"")
 
 run_command("\"#{$OS_EXE}\" #{verbose} execute_ruby_script -h") 
 run_command("\"#{$OS_EXE}\" #{verbose} execute_ruby_script --help") 
-run_command("\"#{$OS_EXE}\" #{verbose} execute_ruby_script #{include_me_a}")
-run_command("\"#{$OS_EXE}\" #{verbose} #{include_me_a}")
+run_command("\"#{$OS_EXE}\" #{verbose} execute_ruby_script \"#{include_me_a}\"")
+run_command("\"#{$OS_EXE}\" #{verbose} \"#{include_me_a}\"")
 
 run_command("\"#{$OS_EXE}\" #{verbose} openstudio_version -h")
 run_command("\"#{$OS_EXE}\" #{verbose} openstudio_version --help")

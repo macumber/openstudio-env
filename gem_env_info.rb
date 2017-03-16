@@ -62,7 +62,12 @@ result[:gem][:win_platform] = Gem.win_platform?
 
 require 'openstudio'
 result[:openstudio_version] = OpenStudio::openStudioVersion
+result[:openstudio_long_version] = OpenStudio::openStudioVersion
 result[:openstudio_module] = OpenStudio::getOpenStudioModule
+result[:openstudio_cli] = OpenStudio::getOpenStudioCLI
+result[:energyplus_exe] = OpenStudio::getEnergyPlusExecutable
+result[:radiance_dir] = OpenStudio::getRadianceDirectory
+result[:perl_exe] = OpenStudio::getPerlExecutable
 
 require 'openstudio-workflow'
 result[:openstudio_workflow_version] = OpenStudio::Workflow::VERSION

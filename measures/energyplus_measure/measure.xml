@@ -2,9 +2,9 @@
   <schema_version>3.0</schema_version>
   <name>energyplus_measure</name>
   <uid>95f4f603-2994-4c40-962d-0896c7b59a65</uid>
-  <version_id>355731b8-92cc-4459-b06a-f95c8caa9166</version_id>
-  <version_modified>20170310T233856Z</version_modified>
-  <xml_checksum>0B6DEAE1</xml_checksum>
+  <version_id>a54ea905-756d-43dc-896b-9dcfa2824980</version_id>
+  <version_modified>20170313T175805Z</version_modified>
+  <xml_checksum>FF4FCBE9</xml_checksum>
   <class_name>EnergyPlusMeasure</class_name>
   <display_name>EnergyPlus Measure</display_name>
   <description>Replace this text with an explanation of what the measure does in terms that can be understood by a general building professional audience (building owners, architects, engineers, contractors, etc.).  This description will be used to create reports aimed at convincing the owner and/or design team to implement the measure in the actual building design.  For this reason, the description may include details about how the measure would be implemented, along with explanations of qualitative benefits associated with the measure.  It is good practice to include citations in the measure if the description is taken from a known source or if specific benefits are listed.</description>
@@ -19,6 +19,7 @@
       <model_dependent>false</model_dependent>
     </argument>
   </arguments>
+  <outputs/>
   <provenances/>
   <tags>
     <tag>Envelope.Form</tag>
